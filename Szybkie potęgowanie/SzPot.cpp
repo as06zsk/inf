@@ -35,17 +35,17 @@ int main(){
 #include <iostream>
 using namespace std;
 
-int potegowanie(int a, int n){
+int SzybkiePotRekurencyjne(int a, int n){
 	int wynik;
 
 	if (n == 0){
 	return 1;
 	}
 	if (n % 2 == 0){
-	wynik = potegowanie(a * a, n / 2);
+	wynik = SzybkiePotRekurencyjne(a * a, n / 2);
 	}
 	if (n % 2 == 1){
-	wynik = a * potegowanie(a, n - 1);
+	wynik = a * SzybkiePotRekurencyjne(a, n - 1);
 	}
 	return wynik;
 
@@ -59,7 +59,7 @@ int main(){
     cout << "Podaj wykładnik (n): ";
     cin >> n;
 
-    int odp = potegowanie(a, n);
+    int odp = SzybkiePotRekurencyjne(a, n);
 
     cout << a << "^" << n << " = " << odp;
 }
