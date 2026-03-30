@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int potegowanie(int a, int n){
+    int wynik = 1;
+
+    while (n > 0){
+        if (n % 2 == 1){
+            wynik = wynik * a;
+        }
+
+        a = a * a;
+        n = n / 2;
+    }
+
+    return wynik;
+}
+
+int main(){
+    int a, n;
+
+    cout << "Podaj bazę (a): ";
+    cin >> a;
+
+    cout << "Podaj wykładnik (n): ";
+    cin >> n;
+
+    int odp = potegowanie(a, n);
+
+    cout << a << "^" << n << " = " << odp;
+}
