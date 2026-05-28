@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int funkcja (int st, int arg, int wsp[]){
+int funkcja (int st, int x, int wsp[]){
 	if (st == 0){
 		return wsp[0];
 	}
-	return arg * funkcja(st-1, arg, wsp) + wsp[st];
+	return x * funkcja(st-1, x, wsp) + wsp[st];
 }
  
  
@@ -28,10 +28,10 @@ int main(){
 	cout << "Podaj wspolczynnik stojacy przy potedze 0: " ;
 	cin >> wsp[0];
 
-	int arg;
+	int x;
 
 	cout << "Podaj argument: " ;
-	cin >> arg;
+	cin >> x;
 	
-	cout << "W( " << arg << " ) = " << funkcja(st, arg, wsp);
+	cout << "W( " << x << " ) = " << funkcja(st, x, wsp);
 }
